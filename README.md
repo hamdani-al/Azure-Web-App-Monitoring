@@ -28,7 +28,7 @@ graph TB
   - HTTP 5xx errors: more than 10 server errors within 5 minutes.
 - An **action group** that emails me when an alert fires.
 - Logs queried with **KQL** in Log Analytics.
-- Built for near-zero cost, with a full cleanup at the end.
+
 
 ## Technologies Used
 

@@ -1,6 +1,5 @@
 # Web App Monitoring on Azure with App Service and Azure Monitor
 
-## Problem and Solution Scenario
 
 ### The Problem
 

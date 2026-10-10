@@ -4,7 +4,6 @@
 
 This project deploys a small web application to **Azure App Service** and builds a basic monitoring setup around it using **Azure Monitor** and **Log Analytics**. The goal is to detect slow responses and server errors before users notice them.
 
-I built everything manually through the **Azure Portal** to learn how each service fits together and what each setting does. The lab is based on the [Basic Web App Monitoring recipe](https://github.com/mzazon/cloud-projects/blob/main/azure/basic-web-monitoring-app-service-monitor/basic-web-monitoring-app-service-monitor.md) by mzazon, which uses the Azure CLI. I followed the same design but used the portal instead.
 
 
 

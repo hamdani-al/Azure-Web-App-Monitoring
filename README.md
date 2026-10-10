@@ -56,7 +56,7 @@ graph TB
 2. Name it `rg-webmonitor-lab` and choose a region.
 3. Select **Review + create**, then **Create**.
 
-### Step 2: Create the Web App on the Free Plan
+### Step 2: Create the Web App
 
 1. Open **App Services** and select **Create** > **Web App**.
 2. Choose the resource group and enter a globally unique name.

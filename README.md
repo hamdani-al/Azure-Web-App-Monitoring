@@ -10,7 +10,7 @@ I built everything manually through the **Azure Portal** to learn how each servi
 
 ```mermaid
 graph TB
-    USER[End Users] --> WEBAPP[App Service Web App - Free F1]
+    USER[End Users] --> WEBAPP[App Service Web App]
     WEBAPP --> MONITOR[Azure Monitor]
     WEBAPP -->|Diagnostic settings| LOGS[Log Analytics Workspace]
     MONITOR --> ALERTS[Alert Rules]
@@ -47,7 +47,7 @@ graph TB
 - An active Azure subscription with Contributor access.
 - A basic understanding of web apps and HTTP status codes.
 - An email address for alert notifications.
-- Free F1 quota in the region you choose (see [Lessons Learned](#lessons-learned--challenges-overcome)).
+
 
 ## Deployment Steps
 

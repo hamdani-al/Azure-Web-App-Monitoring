@@ -68,9 +68,7 @@ flowchart TD
 - Kusto Query Language (KQL)
 - Azure Portal
 
-## Getting Started
-
-### Prerequisites
+## Prerequisites
 
 - An active Azure subscription with Contributor access.
 - A basic understanding of web apps and HTTP status codes.

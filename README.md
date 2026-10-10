@@ -29,6 +29,7 @@ Set up a lightweight monitoring and alerting pipeline on Azure so the team is to
 - Slow responses (average over 5 seconds) trigger a warning alert.
 - Bursts of server errors (more than 10 in 5 minutes) trigger an error alert.
 - Logs are stored centrally and can be queried when investigating an incident.
+- The whole setup runs on the **Free App Service tier** and the Log Analytics free allowance, so it costs close to nothing for a small app.
 
 ## Project Overview
 
@@ -38,13 +39,13 @@ This project deploys a small web application to **Azure App Service** and builds
 
 
 ```mermaid
-graph TB
-    USER[End Users] --> WEBAPP[App Service Web App]
-    WEBAPP --> MONITOR[Azure Monitor]
-    WEBAPP -->|Diagnostic settings| LOGS[Log Analytics Workspace]
-    MONITOR --> ALERTS[Alert Rules]
-    ALERTS --> AG[Action Group]
-    AG --> EMAIL[Email Notification]
+flowchart TD
+    A["End Users"] --> B["App Service Web App"]
+    B --> C["Azure Monitor"]
+    B -->|"Diagnostic settings"| D["Log Analytics Workspace"]
+    C --> E["Alert Rules"]
+    E --> F["Action Group"]
+    F --> G["Email Notification"]
 ```
 
 ## Features

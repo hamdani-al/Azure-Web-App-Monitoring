@@ -1,4 +1,4 @@
-# Basic Web App Monitoring on Azure with App Service and Azure Monitor
+# Web App Monitoring on Azure with App Service and Azure Monitor
 
 ## Project Overview
 
@@ -21,7 +21,7 @@ graph TB
 
 ## Features
 
-- Web app hosted on Azure App Service using the **Free (F1)** tier.
+- Web app hosted on Azure App Service.
 - Application logging enabled on the App Service file system.
 - **Diagnostic settings** route HTTP, console and application logs plus metrics to a Log Analytics workspace.
 - Two **static metric alert rules**:
@@ -33,7 +33,7 @@ graph TB
 
 ## Technologies Used
 
-- Azure App Service (Free F1 plan)
+- Azure App Service 
 - Azure Monitor (metrics and alert rules)
 - Log Analytics Workspace
 - Diagnostic Settings
@@ -132,17 +132,6 @@ AppServiceHTTPLogs
 2. Select **Delete resource group** and confirm the name.
 3. Check for any leftover resources from failed attempts and delete them too.
 
-## Screenshots
-
-<!-- Save your screenshots in an /images folder and update the file names below -->
-
-| Evidence | Screenshot |
-| --- | --- |
-| Web app running | ![Web app](images/web-app.png) |
-| App Service logs configuration | ![App Service logs](images/app-service-logs.png) |
-| Diagnostic settings | ![Diagnostic settings](images/diagnostic-settings.png) |
-| Alert rules list (both Enabled) | ![Alert rules](images/alert-rules.png) |
-| KQL query results | ![KQL results](images/kql-results.png) |
 
 ## Usage
 
@@ -151,27 +140,6 @@ AppServiceHTTPLogs
 - Log Analytics gives a central place to search logs across resources with KQL.
 - The same action group can be reused for other alert rules.
 
-## Cost
-
-The project is designed to cost close to nothing:
-
-| Resource | Cost |
-| --- | --- |
-| App Service plan (Free F1) | $0 |
-| Platform metrics | Free |
-| Log Analytics | First 5 GB/month free, then about $2.30/GB |
-| Metric alerts | First 10 monitored time series free |
-
-I deleted the resource group after finishing so nothing keeps billing.
-
-## Lessons Learned & Challenges Overcome
-
-- **Free tier quota error.** My first deployment failed with "Operation cannot be completed without additional quota" because the Free (F1) quota in that region was 0. Quota is set per region and subscription, so I had to choose a different region (or request quota).
-  <!-- Add which region or fix you used -->
-- **Static vs Dynamic thresholds.** The alert rule form defaults to a Dynamic threshold, which learns normal behaviour and has no fixed value. This lab needs a fixed limit, so I switched the threshold type to **Static**.
-- **Portal vs CLI differences.** The portal labels and layout differ from the CLI commands in the original recipe. Some options, such as a separate web server logging toggle, were not shown for my app.
-- **Metrics vs logs vs alerts.** Metrics tell you something is wrong, logs help you find out why, and alerts tell you when to look.
-- **Cleanup matters.** Deleting the resource group removes everything in one step and avoids surprise charges.
 
 ## Future Enhancements
 
@@ -182,6 +150,3 @@ I deleted the resource group after finishing so nothing keeps billing.
 - Add **autoscaling** rules (needs a paid plan).
 - Rebuild the whole project with **Bicep or Terraform** so it is repeatable and version controlled.
 
-## Credits
-
-Based on the [Basic Web App Monitoring with App Service and Azure Monitor](https://github.com/mzazon/cloud-projects/blob/main/azure/basic-web-monitoring-app-service-monitor/basic-web-monitoring-app-service-monitor.md) recipe from [mzazon/cloud-projects](https://github.com/mzazon/cloud-projects). The deployment here was done manually in the Azure Portal.

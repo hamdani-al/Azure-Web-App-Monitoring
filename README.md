@@ -29,7 +29,6 @@ Set up a lightweight monitoring and alerting pipeline on Azure so the team is to
 - Slow responses (average over 5 seconds) trigger a warning alert.
 - Bursts of server errors (more than 10 in 5 minutes) trigger an error alert.
 - Logs are stored centrally and can be queried when investigating an incident.
-- The whole setup runs on the **Free App Service tier** and the Log Analytics free allowance, so it costs close to nothing for a small app.
 
 ## Project Overview
 
@@ -176,6 +175,6 @@ AppServiceHTTPLogs
 - Write custom **KQL queries** to find error patterns.
 - Build an **Azure Workbook** dashboard for key metrics.
 - Add **availability tests** to check the app from multiple locations.
-- Add **autoscaling** rules (needs a paid plan).
+- Add **autoscaling** rules.
 - Rebuild the whole project with **Bicep or Terraform** so it is repeatable and version controlled.
 

@@ -1,5 +1,36 @@
 # Web App Monitoring on Azure with App Service and Azure Monitor
 
+## Problem and Solution Scenario
+
+### The Problem
+
+A small business runs a customer-facing web application, but it has **no monitoring** in place. The team only finds out about problems when customers complain or when someone happens to notice.
+
+- Slow page loads go unnoticed until customers give up and leave.
+- Server errors (HTTP 5xx) can go on for hours with nobody aware.
+- Logs are scattered across the app and are hard to search when something breaks.
+- Troubleshooting is slow because there is no history to look back on.
+- There is no alerting, so the team reacts to problems instead of preventing them.
+
+### The Solution
+
+Set up a lightweight monitoring and alerting pipeline on Azure so the team is told about problems **before customers notice them**.
+
+| Problem | Solution in this project |
+| --- | --- |
+| No visibility into app health | **Azure Monitor** collects platform metrics such as response time and server errors |
+| Logs are hard to find | **Diagnostic settings** send logs to a central **Log Analytics workspace** |
+| Hard to investigate issues | Logs are searchable with **KQL** queries |
+| Problems found too late | **Alert rules** fire when response time or 5xx errors cross a threshold |
+| Nobody gets notified | An **action group** emails the team as soon as an alert fires |
+
+### The Outcome
+
+- Slow responses (average over 5 seconds) trigger a warning alert.
+- Bursts of server errors (more than 10 in 5 minutes) trigger an error alert.
+- Logs are stored centrally and can be queried when investigating an incident.
+- The whole setup runs on the **Free App Service tier** and the Log Analytics free allowance, so it costs close to nothing for a small app.
+
 ## Project Overview
 
 This project deploys a small web application to **Azure App Service** and builds a basic monitoring setup around it using **Azure Monitor** and **Log Analytics**. The goal is to detect slow responses and server errors before users notice them.
